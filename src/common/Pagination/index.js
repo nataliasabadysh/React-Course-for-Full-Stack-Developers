@@ -11,8 +11,8 @@ export const Pagination = ({ pages, onChangePage }) => {
       }}
     >
       {pages.map((item) => (
-        <li key={item}>
-          <Button label={item} onClickButton={() => onChangePage(item)} />
+        <li key={item} onClick={() => onChangePage(item)}>
+          <Button label={item} />
         </li>
       ))}
     </ul>

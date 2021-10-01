@@ -1,18 +1,15 @@
 // Core
-import React from "react";
+import React, { useContext } from "react";
 // Instruments
 import { LayoutWrapper } from "./LayoutStyles";
+import { ThemeContext } from "../../context/theme";
 
 export const Layout = ({ children }) => {
+  const context = useContext(ThemeContext);
+
   return (
-    <LayoutWrapper theme={""}>
-      <div
-        style={{
-          textTransform: "uppercase",
-          cursor: "pointer",
-          textAlign: "end",
-        }}
-      ></div>
+    <LayoutWrapper theme={context.theme}>
+      <div onClick={() => context.swithTheme(context.theme)}> Theme </div>
       {children}
     </LayoutWrapper>
   );

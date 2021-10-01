@@ -1,12 +1,34 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { api } from "../api";
 
-export const useFetch = ({ url, fetchWithParam }) => {
+export const useFetch = () => {
   const [response, setResponse] = useState([]);
   const [loader, setLoader] = useState(false);
   const [error, setError] = useState(null);
+  const _fetchWithParams = (query, page) => {
+    axios
+      .get(api.images(query, page))
+      .then((res) => {
+        setLoader(true);
+        setResponse(res);
+      })
+      .catch((error) => setError(error))
+      .finally(() => setLoader(false));
+  };
 
-  const data = [];
+  useEffect(() => {
+    axios
+      .get(api.images())
+      .then((res) => {
+        setLoader(true);
+        setResponse(res);
+      })
+      .catch((error) => setError(error))
+      .finally(() => setLoader(false));
+  }, []);
+
+  const data = response && response.data && response.data.hits;
 
   return {
     data,
@@ -15,14 +37,3 @@ export const useFetch = ({ url, fetchWithParam }) => {
     _fetchWithParams,
   };
 };
-
-/*
-USE CASE
-
-    const { data } = useFetch({ url: api.fetchJoke })
-    console.log('fetch', data);
-
-    const { data } = useFetch({ url: api.images() })
-    console.log('fetch', data);
-}
-*/

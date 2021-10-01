@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const LayoutWrapper = styled.section`
+export const LayoutWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   min-height: 60px;

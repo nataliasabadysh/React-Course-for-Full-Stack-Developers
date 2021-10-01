@@ -1,6 +1,6 @@
 import React, { createContext, useState, useCallback } from "react";
 
-export const ThemeContext = createContext();
+export const ThemeContext = createContext(); // Provide Consumer
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState("light");
