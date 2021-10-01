@@ -1,70 +1,49 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Base links about the React 
 
-In the project directory, you can run:
+[React Reconciliation](https://www.youtube.com/watch?v=A0W2n2azH5s&ab_channel=%D0%90%D0%B9%D0%A2%D0%B8%D0%A1%D0%B8%D0%BD%D1%8F%D0%BA)
 
-### `yarn start`
+[Key](https://ru.reactjs.org/docs/lists-and-keys.html#keys)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Why we shoudn’t use Index as a key](https://robinpokorny.medium.com/index-as-a-key-is-an-anti-pattern-e0349aece318)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+[React без JSX(doc)](https://ru.reactjs.org/docs/react-without-jsx.html)
 
-### `yarn test`
+[React без JSX](https://learn.co/lessons/react-create-element)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[new-react-devtools](https://reactjs.org/blog/2019/08/15/new-react-devtools.html)
 
-### `yarn build`
+[dev tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
+# Components
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[React.js шпаргалка](https://devhints.io/react)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Styles 
+[Styled Components](https://emotion.sh/docs/styled)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# children
+https://ru.reactjs.org/docs/composition-vs-inheritance.html
 
-### `yarn eject`
+# context 
+https://github.com/GeekEast/react-context
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+https://tproger.ru/translations/react-context-in-5-min/
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# USefull Links
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+[12 React Best Practices You Need to Follow in 2020](https://www.codeinwp.com/blog/react-best-practices/)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+https://wattenberger.com/blog/react-hooks
+https://overreacted.io/a-complete-guide-to-useeffect/?utm_campaign=a-complete-guide-to-reacts-useeffecta
+https://levelup.gitconnected.com/4-custom-hooks-to-boost-your-react-app-d54aefe34061
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+# Pritter 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+script 
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+npm i -D prettier-eslint prettier
+npm i prettier-eslint-cli 
