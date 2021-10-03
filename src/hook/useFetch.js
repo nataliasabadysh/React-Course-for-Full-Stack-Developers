@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { api } from "../api";
 
@@ -6,7 +6,8 @@ export const useFetch = () => {
   const [response, setResponse] = useState([]);
   const [loader, setLoader] = useState(false);
   const [error, setError] = useState(null);
-  const _fetchWithParams = (query, page) => {
+
+  const _fetchWithParams = useCallback((query, page) => {
     axios
       .get(api.images(query, page))
       .then((res) => {
@@ -15,7 +16,7 @@ export const useFetch = () => {
       })
       .catch((error) => setError(error))
       .finally(() => setLoader(false));
-  };
+  }, []);
 
   useEffect(() => {
     axios

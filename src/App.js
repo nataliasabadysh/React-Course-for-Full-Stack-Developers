@@ -15,11 +15,15 @@ import { useFetch } from "./hook/useFetch";
 import { Modal } from "./common/Modal";
 
 function App() {
+
+  // Example with Custom Hook
   const { data, loader, _fetchWithParams } = useFetch();
+
   const [selected, setSlected] = useState(""); // imaga data on select
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [queryValue, setQueryValue] = useState("");
+  const [page, setPage] = useState(1);
 
   const onSelectImgae = (params) => {
     setSlected(params);
@@ -32,21 +36,14 @@ function App() {
     setQueryValue(property);
   };
 
-  const [page, setPage] = useState(1);
-
   useEffect(() => {
-    if (queryValue) {
-      _fetchWithParams(queryValue);
-    }
-  }, [_fetchWithParams, queryValue]);
-
-  useEffect(() => {
-    if (page) {
+    if (page && queryValue) {
       _fetchWithParams(queryValue, page);
     }
-  }, [page, _fetchWithParams, queryValue]);
+  }, [page, queryValue, _fetchWithParams]);
 
   const onChangePage = (preperty) => setPage(preperty);
+  
   return (
     <ThemeProvider>
       <Layout>
