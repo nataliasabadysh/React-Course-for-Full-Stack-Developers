@@ -1,13 +1,13 @@
 import style from "./style.module.css";
 
-export const ImageGallery = ({ response, onSelectImgae }) => {
+export const ImageGallery = ({ response, onSelectImage }) => {
   return (
     <ul className={style.listGallery}>
       {response &&
         response.map(({ id, webformatURL, largeImageURL }) => (
           <li
             key={id}
-            onClick={() => onSelectImgae(largeImageURL)}
+            onClick={() => onSelectImage(largeImageURL)}
             className={style.listGalleryItem}
           >
             <img

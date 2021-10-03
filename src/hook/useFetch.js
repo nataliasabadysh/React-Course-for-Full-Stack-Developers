@@ -8,23 +8,19 @@ export const useFetch = () => {
   const [error, setError] = useState(null);
 
   const _fetchWithParams = useCallback((query, page) => {
+    setLoader(true);   
     axios
       .get(api.images(query, page))
-      .then((res) => {
-        setLoader(true);
-        setResponse(res);
-      })
+      .then((res) => setResponse(res))
       .catch((error) => setError(error))
       .finally(() => setLoader(false));
   }, []);
 
   useEffect(() => {
+    setLoader(true);
     axios
       .get(api.images())
-      .then((res) => {
-        setLoader(true);
-        setResponse(res);
-      })
+      .then((res) =>  setResponse(res))
       .catch((error) => setError(error))
       .finally(() => setLoader(false));
   }, []);

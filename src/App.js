@@ -19,21 +19,15 @@ function App() {
   // Example with Custom Hook
   const { data, loader, _fetchWithParams } = useFetch();
 
-  const [selected, setSlected] = useState(""); // imaga data on select
+  const [selected, setSlected] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [queryValue, setQueryValue] = useState("");
   const [page, setPage] = useState(1);
 
-  const onSelectImgae = (params) => {
+  const onSelectImage = (params) => {
     setSlected(params);
     setIsModalOpen(true);
-  };
-
-  const closeModel = () => setIsModalOpen(false);
-
-  const onSendQuery = (property) => {
-    setQueryValue(property);
   };
 
   useEffect(() => {
@@ -42,8 +36,13 @@ function App() {
     }
   }, [page, queryValue, _fetchWithParams]);
 
+
+  const closeModel = () => setIsModalOpen(false);
+
   const onChangePage = (preperty) => setPage(preperty);
-  
+  const onSendQuery = (property) =>  setQueryValue(property)
+
+
   return (
     <ThemeProvider>
       <Layout>
@@ -51,7 +50,7 @@ function App() {
         <Searchbar onSendQuery={onSendQuery} />
 
         {!loader && data && (
-          <ImageGallery response={data} onSelectImgae={onSelectImgae} />
+          <ImageGallery response={data} onSelectImage={onSelectImage} />
         )}
         <Pagination
           pages={[1, 2, 3, 4, 5, 6, 7, 8, 9]}
