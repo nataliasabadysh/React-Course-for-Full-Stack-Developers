@@ -8,7 +8,7 @@ export const useFetch = () => {
   const [error, setError] = useState(null);
 
   const _fetchWithParams = useCallback((query, page) => {
-    setLoader(true);   
+    setLoader(true);
     axios
       .get(api.images(query, page))
       .then((res) => setResponse(res))
@@ -20,7 +20,7 @@ export const useFetch = () => {
     setLoader(true);
     axios
       .get(api.images())
-      .then((res) =>  setResponse(res))
+      .then((res) => setResponse(res))
       .catch((error) => setError(error))
       .finally(() => setLoader(false));
   }, []);

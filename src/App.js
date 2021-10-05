@@ -15,7 +15,6 @@ import { useFetch } from "./hook/useFetch";
 import { Modal } from "./common/Modal";
 
 function App() {
-
   // Example with Custom Hook
   const { data, loader, _fetchWithParams } = useFetch();
 
@@ -36,12 +35,10 @@ function App() {
     }
   }, [page, queryValue, _fetchWithParams]);
 
-
   const closeModel = () => setIsModalOpen(false);
 
   const onChangePage = (preperty) => setPage(preperty);
-  const onSendQuery = (property) =>  setQueryValue(property)
-
+  const onSendQuery = (property) => setQueryValue(property);
 
   return (
     <ThemeProvider>

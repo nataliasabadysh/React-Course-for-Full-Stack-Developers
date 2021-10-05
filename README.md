@@ -47,3 +47,34 @@ script
 
 npm i -D prettier-eslint prettier
 npm i prettier-eslint-cli 
+
+
+
+# material-ui
+
+npm install @material-ui/core
+
+
+
+
+
+# Form in React 
+
+[Choosing a React form library for your next project](https://retool.com/blog/choosing-a-react-form-library/)
+
+[The Best React Form Library To Use](https://frontend-digest.com/the-best-react-form-library-to-use-in-2020-11e93c267e4)
+
+[Looking for the Best React Form Library in 2021? It’s Probably on This List](https://dev.to/pmbanugo/looking-for-the-best-react-form-library-in-2021-it-s-probably-on-this-list-e2h)
+
+[Формы](https://learn-reactjs.ru/basics/forms)
+
+# formik lib
+https://formik.org/docs/examples/with-material-ui
+
+https://formik.org/users
+
+
+
+[Как динамически задать имя свойства объекта JS](https://coderoad.ru/42048337/%D0%9A%D0%B0%D0%BA-%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8-%D0%B7%D0%B0%D0%B4%D0%B0%D1%82%D1%8C-%D0%B8%D0%BC%D1%8F-%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B0-JS)
+
+[Material UI + formik](https://formik.org/docs/examples/with-material-ui)
