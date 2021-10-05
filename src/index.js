@@ -15,7 +15,7 @@ import { ToDoList } from "./examples/todo";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ToDoList />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
