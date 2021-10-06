@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export const LoginForm = () => {
   // from props we will take method as onFormSignUp
 
@@ -17,11 +19,15 @@ export const LoginForm = () => {
   const onSend = (e) => {
     e.preventDefault();
     // onFormSignUp(...)
+    console.log('form', { name, emailValue: email})
   };
 
   return (
     <form onSubmit={onSend}>
+      <p> Name</p>
       <input type="text" value={name} name="name" onChange={handleChangeName} />
+
+      <p> Email</p>
       <input type="email" value={email} name="email" onChange={handleChangeEmail}/>
       <button type="submit">Send</button>
     </form>

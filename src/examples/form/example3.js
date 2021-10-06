@@ -15,7 +15,10 @@ const useForm = (initialState) => {
   return { handleChange, form };
 };
 
+
+
 const Component = () => {
+
   const { form, handleChange } = useForm({
     name: "",
     email: "",

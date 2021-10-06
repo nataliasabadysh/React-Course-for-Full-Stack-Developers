@@ -13,9 +13,12 @@ import "./theme/index.css";
 import { Registration } from "./page/Registration/Registration";
 import { ToDoList } from "./examples/todo";
 
+import { LoginForm } from "./examples/form/example2";
+import { WithMaterialFormik } from "./examples/formik/example3";
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Registration />
   </React.StrictMode>,
   document.getElementById("root")
 );

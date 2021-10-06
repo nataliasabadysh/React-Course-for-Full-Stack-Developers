@@ -1,37 +1,48 @@
 import React from "react";
 import { useFormik } from "formik";
-import * as yup from "yup";
+import * as Yup from "yup";
+
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 
 const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 
-const validationSchema = yup.object({
-  email: yup
-    .string("Enter your email")
-    .email("Enter a valid email")
-    .required("Email is required"),
-  password: yup
-    .string("Enter your password")
-    .min(8, "Password should be of minimum 8 characters length")
-    .required("Password is required"),
-});
+// const validationSchema = yup.object({
+//   email: yup
+//     .string("Enter your email")
+//     .email("Enter a valid email")
+//     .required("Email is required"),
+//   password: yup
+//     .string("Enter your password")
+//     .min(8, "Password should be of minimum 8 characters length")
+//     .required("Password is required"),
+// });
 
 export const WithMaterialFormik = () => {
+
   const formik = useFormik({
     initialValues: {
-      email: "foobar@example.com",
-      password: "foobar",
+      password: '',
+      email: '',
     },
-    validationSchema: validationSchema,
-    onSubmit: async (values) => {
-      await delay(1500);
+    validationSchema: Yup.object({
+
+      password: Yup.string()
+        .min(8, "Password should be of minimum 8 characters length")
+        .max(20, 'Must be 20 characters or less')
+        .required('Required'),
+      email: Yup.string().email('Invalid email address').required('Required'),
+    }),
+    onSubmit: values => {
       alert(JSON.stringify(values, null, 2));
     },
   });
 
+  // console.log('formik', formik)
+
+
   return (
-    <div>
+    <div style={{ width: 500, margin: '0 auto'}}>
       <form onSubmit={formik.handleSubmit}>
         <TextField
           fullWidth
@@ -43,6 +54,7 @@ export const WithMaterialFormik = () => {
           error={formik.touched.email && Boolean(formik.errors.email)}
           helperText={formik.touched.email && formik.errors.email}
         />
+
         <TextField
           fullWidth
           id="password"
