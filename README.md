@@ -1,80 +1,86 @@
+# FORM 
+
+# Login & Sign Up
 
 
-# Base links about the React 
+```
+create 2 components 
+1) LoginForm with email, password  
+2) SignUpForm with name, email and  password 
 
-[React Reconciliation](https://www.youtube.com/watch?v=A0W2n2azH5s&ab_channel=%D0%90%D0%B9%D0%A2%D0%B8%D0%A1%D0%B8%D0%BD%D1%8F%D0%BA)
+**** !!! without Forgot password 
 
-[Key](https://ru.reactjs.org/docs/lists-and-keys.html#keys)
+```
 
-[Why we shoudn’t use Index as a key](https://robinpokorny.medium.com/index-as-a-key-is-an-anti-pattern-e0349aece318)
-
-[React без JSX(doc)](https://ru.reactjs.org/docs/react-without-jsx.html)
-
-[React без JSX](https://learn.co/lessons/react-create-element)
-
-[new-react-devtools](https://reactjs.org/blog/2019/08/15/new-react-devtools.html)
-
-[dev tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
-# Components
-
-[React.js шпаргалка](https://devhints.io/react)
-
-# Styles 
-[Styled Components](https://emotion.sh/docs/styled)
-
-# children
-https://ru.reactjs.org/docs/composition-vs-inheritance.html
-
-# context 
-https://github.com/GeekEast/react-context
-
-https://tproger.ru/translations/react-context-in-5-min/
+[UI Example](http://w3iscool.com/wp-content/uploads/2015/10/login-signup-form-1.jpg)
 
 
-# USefull Links
+# Tabs with Material ui ❗️❗️❗️
 
-[12 React Best Practices You Need to Follow in 2020](https://www.codeinwp.com/blog/react-best-practices/)
-
-
-https://wattenberger.com/blog/react-hooks
-https://overreacted.io/a-complete-guide-to-useeffect/?utm_campaign=a-complete-guide-to-reacts-useeffecta
-https://levelup.gitconnected.com/4-custom-hooks-to-boost-your-react-app-d54aefe34061
+npm i @mui/material
+npm i @emotion/react
+npm i @emotion/styled
 
 
-# Pritter 
-
-script 
-
-npm i -D prettier-eslint prettier
-npm i prettier-eslint-cli 
+[Tabs](https://mui.com/ru/api/tabs/#main-content)
+[Examples](https://mui.com/components/tabs/)
 
 
+```js
+// examples would be something like this:
+  const [value, setValue] = useState(0); // INDEX of the selected TAB 
 
-# material-ui
+  const handleChange = (event, newValue) => {
+     setValue(newValue);
+   };
+   
+  const showLogInUIJsx = value === 0 && <h1>Log in page</h1>
+  const showSignInUIJsx = value === 1 && <h1>Sign In Page</h1>
 
-npm install @material-ui/core
+ return(
+    <Tabs value={value} onChange={handleChange} centered>
+      <Tab label="Log in"/> 
+      <Tab label="Sign up"/> 
+      {showLogInUIJsx || showSignInUIJsx}
+    </Tabs>
+   )
+)
+```
+
+# use FORMIK and YUP !
+
+```
+ npm install formik
+
+```
 
 
+<h3>Example you can find from the lesson PDF as a screen, 
+<h1>+</h1> need to add validation for all form-fields </h3>
 
+```
+npm install yup
+```
 
+[validation from the doc](https://formik.org/docs/guides/validation)
+```js
 
-# Form in React 
+// EXAMPLE 
+import * as Yup from 'yup';
 
-[Choosing a React form library for your next project](https://retool.com/blog/choosing-a-react-form-library/)
+const validation = Yup.object().shape({
+   username: Yup.string()
+     .min(2, 'Too Short!')
+     .max(50, 'Too Long!')
+     .required('Required'),
+    password: Yup.number()
+     .min(2, 'Too Short!')
+     .max(50, 'Too Long!')
+     .required('Required'),
+   email: Yup.string().email('Invalid email').required('Required'),
+ });
 
-[The Best React Form Library To Use](https://frontend-digest.com/the-best-react-form-library-to-use-in-2020-11e93c267e4)
+```
 
-[Looking for the Best React Form Library in 2021? It’s Probably on This List](https://dev.to/pmbanugo/looking-for-the-best-react-form-library-in-2021-it-s-probably-on-this-list-e2h)
-
-[Формы](https://learn-reactjs.ru/basics/forms)
-
-# formik lib
-https://formik.org/docs/examples/with-material-ui
-
-https://formik.org/users
-
-
-
-[Как динамически задать имя свойства объекта JS](https://coderoad.ru/42048337/%D0%9A%D0%B0%D0%BA-%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8-%D0%B7%D0%B0%D0%B4%D0%B0%D1%82%D1%8C-%D0%B8%D0%BC%D1%8F-%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B0-JS)
-
-[Material UI + formik](https://formik.org/docs/examples/with-material-ui)
+1) Show error message in red color. 
+2) Button onSend should show correct form values in the console 
