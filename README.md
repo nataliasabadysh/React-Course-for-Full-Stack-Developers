@@ -78,3 +78,93 @@ https://formik.org/users
 [Как динамически задать имя свойства объекта JS](https://coderoad.ru/42048337/%D0%9A%D0%B0%D0%BA-%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8-%D0%B7%D0%B0%D0%B4%D0%B0%D1%82%D1%8C-%D0%B8%D0%BC%D1%8F-%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B0-JS)
 
 [Material UI + formik](https://formik.org/docs/examples/with-material-ui)
+
+
+# ROUTING 
+
+npm i react-router-dom
+
+[Протокол HTTP. Общие сведения](https://alekseev74.ru/lessons/show/http/basics)
+
+
+[A little bit of history](https://medium.com/@pshrmn/a-little-bit-of-history-f245306f48dd)
+
+[Lib doc](https://reactrouter.com/web/guides/quick-start)
+
+
+<!-- GO back history.push(props.location.state.from); -->
+
+<!-- <Route exact path={routes.HOME} component={HomePage} />
+<Route path={routes.MOVIE_DETAILS} component={MovieDetailsPage} />
+<Route path={routes.MOVIES} component={MoviesPage} /> -->
+
+<!-- export default {
+  HOME: '/',
+  MOVIES: '/movies',
+  MOVIE_DETAILS: '/movies/:movieId',
+}; -->
+
+<!-- 
+{movies.map(movie => (
+            <div className="item" key={movie.id}>
+              <Link
+                to={{
+                  pathname: `${routes.MOVIES}/${movie.id}`,
+                  state: { from: location },
+                }}
+              >
+                {movie.original_title || movie.original_name}
+              </Link>
+            </div>
+          ))} -->
+
+<!-- 
+  componentDidMount() {
+    this.fetchDetails();
+  }
+
+  fetchDetails = () => {
+    const { movieId } = this.props.match.params;
+    apiService
+      .fetchMoviesDetails(movieId)
+      .then(movie => this.setState({ movie }));
+  };
+
+  onGoBack = () => {
+    props.history.push('/movies');
+  }; -->
+
+```js
+const apiKey = 'c297c19c2e8522b6413b995ef0a34ee4';
+
+const getTrending = () => {
+  return fetch(
+    `https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey} `,
+  )
+    .then(res => {
+      if (res.ok) {
+        return res.json();
+      }
+      throw new Error('not found');
+    })
+    .then(data => data.results)
+    .catch(err => {
+      throw err;
+    });
+};
+const fetchMoviesDetails = movieId => {
+  return fetch(
+    `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey} `,
+  )
+    .then(res => {
+      if (res.ok) {
+        return res.json();
+      }
+      throw new Error('not found');
+    })
+    .catch(err => {
+      throw err;
+    });
+};
+
+```

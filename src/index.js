@@ -1,24 +1,33 @@
 // Core
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 // Components
 import App from "./App";
 
 // Instruments
 import "./theme/index.css";
 
-// import { FormFormik } from "./examples/formik/example1";
-// import { WithMaterialUI } from "./examples/formik/example2";
-// import { WithMaterialFormik } from "./examples/formik/example3";
-import { Registration } from "./page/Registration/Registration";
-import { ToDoList } from "./examples/todo";
+// image
 
-import { LoginForm } from "./examples/form/example2";
-import { WithMaterialFormik } from "./examples/formik/example3";
+
+const ImageItemViewPage = (props) => {
+
+  console.log('ID for the API call', props.match.params.id)
+
+  return <h1>Hello world:)</h1>
+}
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <Registration />
+    <Router>
+
+     <Route exact path='/' component={App} />
+     <Route exact path='/image/:id' component={ImageItemViewPage} />
+
+    </Router>
   </React.StrictMode>,
   document.getElementById("root")
 );

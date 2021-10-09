@@ -1,6 +1,5 @@
 // Core
 import React, { useState, useEffect } from "react";
-
 // Context
 import { ThemeProvider } from "./context/theme";
 
@@ -14,7 +13,7 @@ import { Layout } from "./common/Layout";
 import { useFetch } from "./hook/useFetch";
 import { Modal } from "./common/Modal";
 
-function App() {
+function App(props) {
   // Example with Custom Hook
   const { data, loader, _fetchWithParams } = useFetch();
 
@@ -29,6 +28,7 @@ function App() {
     setIsModalOpen(true);
   };
 
+  // console.log('history', history)
   useEffect(() => {
     if (page && queryValue) {
       _fetchWithParams(queryValue, page);
@@ -40,6 +40,7 @@ function App() {
   const onChangePage = (preperty) => setPage(preperty);
   const onSendQuery = (property) => setQueryValue(property);
 
+
   return (
     <ThemeProvider>
       <Layout>
@@ -47,7 +48,7 @@ function App() {
         <Searchbar onSendQuery={onSendQuery} />
 
         {!loader && data && (
-          <ImageGallery response={data} onSelectImage={onSelectImage} />
+          <ImageGallery response={data} onSelectImage={onSelectImage} history={props.history}/>
         )}
         <Pagination
           pages={[1, 2, 3, 4, 5, 6, 7, 8, 9]}
