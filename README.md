@@ -1,92 +1,70 @@
+# Getting Started with Create React App
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Base links about the React 
+## Available Scripts
 
-[React Reconciliation](https://www.youtube.com/watch?v=A0W2n2azH5s&ab_channel=%D0%90%D0%B9%D0%A2%D0%B8%D0%A1%D0%B8%D0%BD%D1%8F%D0%BA)
+In the project directory, you can run:
 
-[Key](https://ru.reactjs.org/docs/lists-and-keys.html#keys)
+### `yarn start`
 
-[Why we shoudn’t use Index as a key](https://robinpokorny.medium.com/index-as-a-key-is-an-anti-pattern-e0349aece318)
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-[React без JSX(doc)](https://ru.reactjs.org/docs/react-without-jsx.html)
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-[React без JSX](https://learn.co/lessons/react-create-element)
+### `yarn test`
 
-[new-react-devtools](https://reactjs.org/blog/2019/08/15/new-react-devtools.html)
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-[dev tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
-# Components
+### `yarn build`
 
-[React.js шпаргалка](https://devhints.io/react)
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-# Styles 
-[Styled Components](https://emotion.sh/docs/styled)
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-# children
-https://ru.reactjs.org/docs/composition-vs-inheritance.html
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-# context 
-https://github.com/GeekEast/react-context
+### `yarn eject`
 
-https://tproger.ru/translations/react-context-in-5-min/
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-# USefull Links
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-[12 React Best Practices You Need to Follow in 2020](https://www.codeinwp.com/blog/react-best-practices/)
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## Learn More
 
-https://wattenberger.com/blog/react-hooks
-https://overreacted.io/a-complete-guide-to-useeffect/?utm_campaign=a-complete-guide-to-reacts-useeffecta
-https://levelup.gitconnected.com/4-custom-hooks-to-boost-your-react-app-d54aefe34061
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-# Pritter 
+### Code Splitting
 
-script 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-npm i -D prettier-eslint prettier
-npm i prettier-eslint-cli 
+### Analyzing the Bundle Size
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
+### Making a Progressive Web App
 
-# material-ui
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-npm install @material-ui/core
+### Advanced Configuration
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
+### Deployment
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
+### `yarn build` fails to minify
 
-# Form in React 
-
-[Choosing a React form library for your next project](https://retool.com/blog/choosing-a-react-form-library/)
-
-[The Best React Form Library To Use](https://frontend-digest.com/the-best-react-form-library-to-use-in-2020-11e93c267e4)
-
-[Looking for the Best React Form Library in 2021? It’s Probably on This List](https://dev.to/pmbanugo/looking-for-the-best-react-form-library-in-2021-it-s-probably-on-this-list-e2h)
-
-[Формы](https://learn-reactjs.ru/basics/forms)
-
-# formik lib
-https://formik.org/docs/examples/with-material-ui
-
-https://formik.org/users
-
-
-
-[Как динамически задать имя свойства объекта JS](https://coderoad.ru/42048337/%D0%9A%D0%B0%D0%BA-%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8-%D0%B7%D0%B0%D0%B4%D0%B0%D1%82%D1%8C-%D0%B8%D0%BC%D1%8F-%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B0-JS)
-
-[Material UI + formik](https://formik.org/docs/examples/with-material-ui)
-
-
-# ROUTING 
-
-npm i react-router-dom
-
-[Протокол HTTP. Общие сведения](https://alekseev74.ru/lessons/show/http/basics)
-
-
-[A little bit of history](https://medium.com/@pshrmn/a-little-bit-of-history-f245306f48dd)
-
-[Lib doc](https://reactrouter.com/web/guides/quick-start)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
