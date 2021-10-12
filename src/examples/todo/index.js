@@ -10,6 +10,6 @@ export const ToDoList = () => {
       setTodo(prev=> [...prev, data])
     };
 
-    return <FormNote onSendNote={onSend} onUpdate={onUpdate} />
+    return <FormNote onSendNote={onSend}  />
   };
   

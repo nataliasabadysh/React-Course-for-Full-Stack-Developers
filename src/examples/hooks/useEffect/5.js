@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { render } from 'react-dom';
 
-const Example = () => {
+export const ExampleUseEffect = () => {
   const [counter, setCounter] = useState(0);
 
   const increase = (prevCounter) => prevCounter + 1;
@@ -14,6 +14,7 @@ const Example = () => {
 
     return () => {
       clearInterval(id);
+      console.log("leave")
     }
   }, [counter]);
 

@@ -15,10 +15,11 @@ import { ToDoList } from "./examples/todo";
 
 import { LoginForm } from "./examples/form/example2";
 import { WithMaterialFormik } from "./examples/formik/example3";
+import { ExampleUseEffect } from "./examples/hooks/useEffect/5";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Registration />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
