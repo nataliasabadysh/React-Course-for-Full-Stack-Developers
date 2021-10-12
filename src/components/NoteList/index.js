@@ -1,11 +1,12 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { uuid } from 'uuidv4';
 
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
 import { NoteItem } from '../NoteItem';
+import storage from '../utils/storage';
 
 
 
@@ -28,6 +29,27 @@ export const NoteList = () => {
         });
         setValue('')
     }
+
+
+    // const notesData = storage.get("notes");
+    // const notesData = storage.save("notes", notes);
+
+    useEffect(() => {
+        const listData = storage.get("list");
+
+        if(listData){
+            setList(listData)
+        }
+       
+    }, [])
+
+
+    useEffect(() => {
+        if(list){
+            storage.save("list", list);
+        }
+    }, [list])
+
 
     const onDelete = (id) => {
         const newLis =  list.filter(item => item.id !== id) // new Array without "id" - item  
