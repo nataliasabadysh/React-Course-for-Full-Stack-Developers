@@ -26,7 +26,7 @@ const getMoviesDetailsAPI =  `https://api.themoviedb.org/3/movie/${movieId}?api_
 
 
 ```js
-'/movies' - компонент <MoviesPage>, страница поиска фильмов по ключевому слову.
+'/movies' - компонент <MoviesPage>, страница фильмов.
 '/movies/:movieId' - компонент <MovieDetailsPage>, страница с детальной информацией о кинофильме.
 ```
 
