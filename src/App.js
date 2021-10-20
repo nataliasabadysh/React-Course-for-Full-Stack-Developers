@@ -23,6 +23,7 @@ const columns = [
   { field: 'location', headerName: 'Location', width: 230 },
 ];
 
+// !!! MOCK DATA, you should take from the  redux contacts.list 
 const rows = [
     {
       name: "Alex",
@@ -59,7 +60,6 @@ function App() {
     // else 
     // dispatch(addContacts(fromFromFields))
   }
-
 
   return (
     <div style={{ width: 900 }}>
