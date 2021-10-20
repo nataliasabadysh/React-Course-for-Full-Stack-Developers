@@ -1,2 +1,2 @@
-export const PostItem = ({ name }) => <li>{name}</li>
 
+export const PostItem = ({ name }) => <li>{name}</li>

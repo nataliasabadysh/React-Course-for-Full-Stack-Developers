@@ -1,4 +1,4 @@
-import { FILL_POST, CHANGE_TAG} from "./types";
+import { FILL_POST, START_LOADING, STOP_LOADING, SET_ERROR } from "./types";
 
 export const postsReducer = (state =  [], { type, payload }) => {
     switch(type){
@@ -12,10 +12,13 @@ export const postsReducer = (state =  [], { type, payload }) => {
 }
 
 
-export const tagReducer = (state = '', { type, payload }) => {
+export const loadingReducer = (state = false, { type }) => {
     switch(type){
-        case CHANGE_TAG: {
-            return payload
+        case START_LOADING: {
+            return true
+        }
+        case STOP_LOADING: {
+            return false
         }
         default: {
             return state
@@ -23,3 +26,14 @@ export const tagReducer = (state = '', { type, payload }) => {
     }
 }
 
+
+export const  errorReducer = (state = null, { type, payload }) => {
+    switch(type){
+        case SET_ERROR: {
+            return payload
+        }
+        default: {
+            return state
+        }
+    }
+}

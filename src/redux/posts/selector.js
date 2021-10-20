@@ -1,10 +1,4 @@
-import { createSelector } from 'reselect'
 
 export const getPosts = (state) => state.posts.list
-export const getTag = (state) => state.posts.tag;
-
-export const getVisiblePosts = createSelector(
-    [getPosts, getTag], 
-    (posts, tag)=> {
-        return posts.filter(item => item.tag.includes(tag)) 
-})
+export const getLoadingPost = (state) => state.posts.isLoading
+export const getErrorPost = (state) => state.posts.error
