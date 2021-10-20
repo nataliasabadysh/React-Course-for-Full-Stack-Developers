@@ -1,0 +1,22 @@
+{
+  "contacts": [
+    {
+      "name": "Natalia",
+      "location": "Ukraine",
+      "number": "06641343333",
+      "id": "0b0fb494-67fc-4f65-86f3-61d5351b5096"
+    },
+    {
+      "name": "Chris",
+      "number": "108334489894",
+      "location": "NY",
+      "id": "0b0fb494-67fc-4f65-86f3-61d5351b5096"
+    },
+    {
+      "name": "Alex 2",
+      "number": "0939226777(2)",
+      "lacation": "Australia",
+      "id": "a947b174-93d4-4971-9587-50de50efb09a"
+    }
+  ]
+}
