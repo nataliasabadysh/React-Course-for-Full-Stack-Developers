@@ -1,5 +1,6 @@
 # Нужно реализовать продвинутый Health трекер.
-## Техническое задание
+
+# Техническое задание
 
 ```
 Приложение должно уметь регистрировать новых пользователей (in LS). 
@@ -32,10 +33,7 @@
 И необходимо посчитать на основании Values -  Life Score. 
 
 Сохранение данных в этом проекте нужно реализовать с помощью Redux
-Приложение должно уметь работать в нашем случае с LocalStorage
-```
-
-
+Приложение должно уметь работать в нашем случае с LocalStorage```
 
 ```js
 age: 30
@@ -76,39 +74,24 @@ data : {
 ```
 
 ```json
-[
-   {
-      "breakfast":{
-         "value":"light" // "heavy"
-      },
-      "lunch":{
-         "value":"light", // "heavy"
-      },
-      "dinner":{
-         "value":"light", // "heavy"
-      },
-      "activity":{
-         "value":1000 
-      },
-      "fruits":{
-         "value":false,
-      },
-      "vegetables":{
-         "value":false,
-         
-      },
-      "fastfood":{
-         "value":false,
-      },
-      "water":{
-         "value":1 // max 10, / 4 * 250 = 1000ml
-      },
-      "dream":{
-         "value":2  // max 24
-      },
-      "coffe":{
-         "value": false // true"
-      }
-   }
-]
+  {
+     "breakfast": "light", // "heavy"
+     "lunch":"light", // "heavy"
+     "dinner":"light", // "heavy"
+     "activity": 1000 ,
+     "fruits":false,
+     "vegetables": false,
+     "fastfood":false,
+     "water":1, // max 10, / 4 * 250 = 1000ml
+     "dream":2,  // max 24
+     "coffe": false // true"
+  }
+```
+
+# Стилизация
+
+```js
+
+Стилизация делается c CSS-модулями или Styled Components + Material UI 
+
 ```
