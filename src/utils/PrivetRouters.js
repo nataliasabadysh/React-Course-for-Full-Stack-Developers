@@ -2,7 +2,7 @@ import { Route, Redirect } from "react-router-dom";
 
 export const PrivetRouter = ({
   isAuthenticated,
-  redirectTO,
+  redirectTO="/news",
   component: Component,
   ...routeProps
 }) => {

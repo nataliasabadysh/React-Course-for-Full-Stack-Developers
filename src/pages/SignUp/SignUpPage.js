@@ -2,7 +2,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useHistory } from "react-router-dom";
 import { routers } from "../../utils/routes";
 
 // Instruments
@@ -29,6 +29,16 @@ const SignUp = () => {
   const dispatch = useDispatch();
   const errorMessage = useSelector((state) => state.auth.errorSignUp);
 
+  const onSave = (values) => {
+    dispatch(createUserAsync(values));
+
+    if(!errorMessage){
+      history.push(routers.NEWS.path)
+    }
+  }
+
+  const history = useHistory();
+
   const formik = useFormik({
     initialValues: {
       email: "nata@gmail.com",
@@ -37,7 +47,7 @@ const SignUp = () => {
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
-      dispatch(createUserAsync(values));
+      onSave(values)
     },
   });
 

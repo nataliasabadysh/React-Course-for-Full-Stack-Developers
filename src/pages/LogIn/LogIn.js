@@ -2,7 +2,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { routers } from "../../utils/routes";
 
 // Instruments
@@ -24,7 +24,8 @@ const validationSchema = yup.object({
 const LogIn = () => {
   const dispatch = useDispatch();
   const errorMessage = useSelector((state) => state.auth.errorLogIn);
-
+  const history = useHistory();
+  
   const formik = useFormik({
     initialValues: {
       email: "nata@gmail.com",
@@ -32,7 +33,12 @@ const LogIn = () => {
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
-      console.log(values);
+
+      if(!errorMessage){
+        history.push(routers.NEWS.path)
+      }
+    
+
       dispatch(logInUserAsync(values));
     },
   });

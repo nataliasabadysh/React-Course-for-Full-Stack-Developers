@@ -4,7 +4,7 @@ import { useEffect, lazy, Suspense } from "react";
 
 // import { LogIn } from "./pages/LogIn/LogIn";
 // import { SignUp } from "./pages/SignUp/SignUpPage";
-import { Switch, Route, useLocation } from "react-router-dom";
+import { Switch, Route, useHistory } from "react-router-dom";
 import { Navigation } from "./component/Navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { singUpUser, singUpUserSuccess } from "./redux/auth/actions";
@@ -27,12 +27,15 @@ function App() {
   const dispatch = useDispatch();
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
+  const history = useHistory();
+
   useEffect(() => {
     const ls = JSON.parse(localStorage.getItem("auth"));
-
+    
     if (ls) {
       dispatch(singUpUser(ls));
       dispatch(singUpUserSuccess);
+      history.push(routers.NEWS.path)
     }
 
     document.title = "MOVIE STAR";
@@ -46,21 +49,21 @@ function App() {
         <Switch>
           <Suspense fallback={<ClipLoader color={"red"} size={150} />}>
             {!isAuthenticated && (
-              <Route path="/singup" component={SignUpAsync} />
+              <Route path={routers.SINGUP.path} component={SignUpAsync} />
             )}
-            {!isAuthenticated && <Route path="/login" component={LogInAsync} />}
+            {!isAuthenticated && <Route path={routers.LOGIN.path} component={LogInAsync} />}
 
             <PrivetRouter
               isAuthenticated={isAuthenticated}
               path={routers.NEWS.path}
               component={NewsPage}
-              redirectTo="/login"
+              redirectTo={routers.LOGIN.path}
             />
             <PrivetRouter
               isAuthenticated={isAuthenticated}
               path={routers.DASHBOARD.path}
               component={DashboardAsync}
-              redirectTo="/login"
+              redirectTo={routers.LOGIN.path}
             />
           </Suspense>
         </Switch>

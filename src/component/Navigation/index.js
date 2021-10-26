@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import styles from "./styles.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { Button } from "@mui/material";
@@ -16,10 +16,12 @@ export const Navigation = () => {
   const userName = useSelector((state) => state.auth.user.name);
 
   const dispatch = useDispatch();
+  const history = useHistory()
 
   const onLogOut = () => {
     localStorage.removeItem("auth");
     dispatch(logOutUserAsync());
+    history.push(routers.LOGIN.path)
   };
 
   const userJSX = isAuthenticated && (
