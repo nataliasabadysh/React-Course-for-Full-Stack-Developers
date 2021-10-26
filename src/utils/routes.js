@@ -1,8 +1,20 @@
 export const routers = {
-    HOME: {
-        path: '/fitness'
-    },
-    PROFILE: {
-        path: '/fitness/profile'
-    }
-}
+  HOME: {
+    path: "/",
+  },
+  DASHBOARD: {
+    path: "/dashboard",
+  },
+  PROFILE: {
+    path: "/profile",
+  },
+  LOGIN: {
+    path: "/login",
+  },
+  SINGUP: {
+    path: "/singup",
+  },
+  NEWS: {
+    path: "/news",
+  },
+};
