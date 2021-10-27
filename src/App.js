@@ -2,13 +2,10 @@
 import { containerStyle } from "./theme/styles";
 import { useEffect, lazy, Suspense } from "react";
 
-// import { LogIn } from "./pages/LogIn/LogIn";
-// import { SignUp } from "./pages/SignUp/SignUpPage";
 import { Switch, Route, useHistory } from "react-router-dom";
 import { Navigation } from "./component/Navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { singUpUser, singUpUserSuccess } from "./redux/auth/actions";
-import { NewsPage } from "./pages/NewsPage/NewsPage";
 import { routers } from "./utils/routes";
 import { PrivetRouter } from "./utils/PrivetRouters";
 import ClipLoader from "react-spinners/ClipLoader";
@@ -23,6 +20,11 @@ const SignUpAsync = lazy(() =>
   import(/* webpackChunkName: "SignUp-Page" */ "./pages/SignUp/SignUpPage")
 );
 
+const NewsPageAsync = lazy(() =>
+  import(/* webpackChunkName: "News-Page" */ "./pages/NewsPage/NewsPage")
+);
+
+
 function App() {
   const dispatch = useDispatch();
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
@@ -32,14 +34,14 @@ function App() {
   useEffect(() => {
     const ls = JSON.parse(localStorage.getItem("auth"));
     
-    if (ls) {
+    if(ls) {
       dispatch(singUpUser(ls));
       dispatch(singUpUserSuccess);
       history.push(routers.NEWS.path)
     }
-
     document.title = "MOVIE STAR";
-  }, [dispatch]);
+  }, [dispatch, history]);
+
 
   return (
     <>
@@ -56,7 +58,7 @@ function App() {
             <PrivetRouter
               isAuthenticated={isAuthenticated}
               path={routers.NEWS.path}
-              component={NewsPage}
+              component={NewsPageAsync}
               redirectTo={routers.LOGIN.path}
             />
             <PrivetRouter

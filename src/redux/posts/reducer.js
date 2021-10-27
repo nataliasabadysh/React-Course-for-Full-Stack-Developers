@@ -1,5 +1,6 @@
 import { FILL_POST, START_LOADING, STOP_LOADING, SET_ERROR } from "./types";
 
+
 export const postsReducer = (state = [], { type, payload }) => {
   switch (type) {
     case FILL_POST: {

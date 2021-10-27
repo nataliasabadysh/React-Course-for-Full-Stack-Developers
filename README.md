@@ -247,19 +247,7 @@ https://app.netlify.com/
 
 https://www.npmjs.com/package/netlify-cli
 
-2) Add file netlify.toml to your root app
-
-```
-
-[build]
-  publish = "build"
-
-[[redirects]] 
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-```
+git 
 
 3) Installing
 
@@ -271,7 +259,6 @@ npm install netlify-cli -g
 netlify login 
 
 ```
-
 
 4) Scripts 
 
@@ -285,6 +272,7 @@ netlify login
 
 ```
 npm run deploy 
+
 ```
 
 

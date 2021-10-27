@@ -12,7 +12,7 @@ export function PostContainer() {
     if(posts.length === 0){
       dispatch(fetchPost())
     }
-  }, [dispatch]);
+  }, [dispatch, posts.length]);
 
   return (
     <div>
