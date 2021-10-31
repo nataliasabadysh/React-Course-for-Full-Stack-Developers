@@ -1,0 +1,1 @@
+// type === 'primery': 'blue': 'white';

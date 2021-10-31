@@ -1,1 +1,0 @@
-{"version":3,"sources":["pages/Dashboard/Dashboard.js"],"names":["Dashboard"],"mappings":"4HAIeA,UAJG,WAChB,OAAO","file":"static/js/Dashboard-Page.0cf83082.chunk.js","sourcesContent":["const Dashboard = () => {\n  return <h1>Dashboard Page</h1>;\n};\n\nexport default Dashboard;\n"],"sourceRoot":""}
